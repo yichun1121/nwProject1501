@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>catogory</key>
+		<string>產檢</string>
+		<key>startDay</key>
+		<string>21</string>
+		<key>endDay</key>
+		<string>28</string>
+		<key>name</key>
+		<string>第1次產檢</string>
+		<key>desc</key>
+		<string>5~6週，驗孕、確認著床位置</string>
+	</dict>
+	<dict><key>catogory</key><string>產檢</string><key>startDay</key><string>28</string><key>endDay</key><string>42</string><key>name</key><string>第2次產檢</string><key>desc</key><string>6~8週，確認心跳</string></dict>
+	<dict><key>catogory</key><string>產檢</string><key>startDay</key><string>70</string><key>endDay</key><string>77</string><key>name</key><string>第3次產檢</string><key>desc</key><string>健保給付第一次例行產檢1、問診：</string></dict>
+</array>
+</plist>

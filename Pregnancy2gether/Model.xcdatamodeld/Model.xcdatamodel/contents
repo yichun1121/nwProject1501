@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7549" systemVersion="14D136" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Baby" representedClassName="Baby" syncable="YES">
+        <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dueDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="lastMC" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ovulatoryDay" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="period" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="events" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Event" inverseName="baby" inverseEntity="Event" syncable="YES"/>
+        <relationship name="steps" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Step" inverseName="baby" inverseEntity="Step" syncable="YES"/>
+    </entity>
+    <entity name="Event" representedClassName="Event" syncable="YES">
+        <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="end" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="start" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="baby" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Baby" inverseName="events" inverseEntity="Baby" syncable="YES"/>
+        <relationship name="eventCat" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EventCat" inverseName="events" inverseEntity="EventCat" syncable="YES"/>
+        <relationship name="photos" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Photo" inverseName="event" inverseEntity="Photo" syncable="YES"/>
+    </entity>
+    <entity name="EventCat" representedClassName="EventCat" syncable="YES">
+        <attribute name="colorRGB" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="iconName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="events" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Event" inverseName="eventCat" inverseEntity="Event" syncable="YES"/>
+    </entity>
+    <entity name="Photo" representedClassName="Photo" syncable="YES">
+        <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="filename" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="relativePath" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="event" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Event" inverseName="photos" inverseEntity="Event" syncable="YES"/>
+    </entity>
+    <entity name="Step" representedClassName="Step" syncable="YES">
+        <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="end" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="start" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="baby" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Baby" inverseName="steps" inverseEntity="Baby" syncable="YES"/>
+        <relationship name="stepCat" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="StepCat" inverseName="steps" inverseEntity="StepCat" syncable="YES"/>
+    </entity>
+    <entity name="StepCat" representedClassName="StepCat" syncable="YES">
+        <attribute name="colorRGB" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="iconName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="steps" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Step" inverseName="stepCat" inverseEntity="Step" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Baby" positionX="-101" positionY="-117" width="128" height="163"/>
+        <element name="Event" positionX="70" positionY="-16" width="128" height="148"/>
+        <element name="EventCat" positionX="88" positionY="194" width="128" height="103"/>
+        <element name="Photo" positionX="63" positionY="-162" width="128" height="103"/>
+        <element name="Step" positionX="-288" positionY="-36" width="128" height="133"/>
+        <element name="StepCat" positionX="-137" positionY="194" width="128" height="103"/>
+    </elements>
+</model>
